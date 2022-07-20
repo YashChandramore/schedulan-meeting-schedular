@@ -1,0 +1,641 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHEDULAN</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        :root {
+            --navbar-height: 59px;
+
+        }
+
+        #navbarupperright {
+            display: inline-block;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0px;
+        }
+
+        #logo {
+            margin: 34px 45px
+        }
+
+        #logo img {
+            height: 69px;
+            margin:
+                3px 6px;
+        }
+
+        #navbar ul {
+            display: flex;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.3em;
+        }
+
+        #navbar ul li a {
+            color: red;
+            display: block;
+            padding: 3px 30px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 578px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            background: url('../img');
+            height: 642px;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #home h1 {
+            color: red;
+            text-align: center;
+        }
+
+        #home p {
+            color: red;
+            text-align: center;
+            font-size: 1.5rem
+        }
+
+        #services {
+            margin: 34px;
+            display: flex;
+            padding: 34px 56px
+        }
+
+        #services .box {
+            border: 2px solid brown;
+            padding: 40px;
+            margin: 30px 75px;
+            border-radius: 28px;
+            background: grey;
+        }
+
+        #services .box img {
+            height: 160px;
+            margin: auto;
+            display: block;
+        }
+
+        #client-section {
+            height: 344px;
+        }
+
+        #client-section::before {
+            content: "";
+            position: absolute;
+            background: url('../https://tse2.mm.bing.net/th?id=OIP.QNH4cllCmYk1F0Y9F-0miQAAAA&pid=Api&P=0&w=411&h=170');
+            width: 100%;
+            height: 54%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .clients {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: red;
+            background-image: url("https://image.shutterstock.com/image-photo/daylight-savings-time-concept-clock-260nw-724990921.jpg");
+        }
+
+        .client-item {
+            padding: 34px;
+        }
+        .client-item:hover{
+             background-size: 200%;
+             background-color: yellowgreen;
+             backface-visibility: hidden;
+        }
+
+        .clients img {
+            height: 180px;
+        }
+
+        #Contact {
+
+            position: relative;
+            background-image: url("https://thumbs.dreamstime.com/z/white-clean-calendar-yellow-pencil-solid-background-copy-space-using-as-reminder-schedule-business-project-plan-143801011.jpg");
+        }
+
+        #Contact::before {
+            /* content=""; */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: url(../img3)
+        }
+
+        #contact-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 34px;
+        }
+
+        #contact-box input,
+        #contact-box textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 9px;
+            font-size: 1.1rem;
+        }
+
+        #contact-box form {
+            width: 40%;
+        }
+
+        #contact-box label {
+            font-size: 1.3rem;
+            font-family: 'Bree Serif', serif;
+        }
+
+
+        .h-primary {
+            font-family: 'Bree Serif', serif;
+            font-size: 3.8rem;
+            padding: 12px;
+            color: black;
+            background-color: rgb(90%, 50%, 50%);
+        }
+
+        .h-primary a {
+            padding: 10px;
+            height: 5px;
+        }
+
+
+        .h-secondary {
+            font-size: 2.8rem;
+            padding: 12px
+        }
+
+        .btn {
+            padding: 6px 35px;
+            border: 2px solid white;
+            background-color: black;
+            color: white;
+            margin: 17px;
+            font-size: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            color: white;
+
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #background {
+            height: 100%;
+            width: 100%;
+            size: 100%;
+            color: bisque;
+            background-repeat: no-repeat;
+        }
+
+        #login {
+            right: 0;
+
+        }
+
+        .navbarupperright {
+            left: 0;
+
+        }
+
+        .login {
+            height: 80px;
+            width: 160px;
+            margin-top: 0px;
+            color: black;
+            border: 5px solid black;
+            border-radius: 15px;
+            margin: 20px;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: larger;
+            font-style: none;
+            list-style: none;
+            text-decoration: none;
+
+        }
+
+        .signin {
+            height: 40px;
+            width: 120px;
+            margin-top: 0px;
+            color: black;
+            border: 5px solid black;
+            border-radius: 15px;
+            margin: 20px;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .signin:hover {
+            color: red;
+            background-color: yellow;
+
+        }
+
+        .login:hover {
+            color: red;
+            background-color: yellow;
+
+        }
+
+        .navupperright {
+            margin: 40px;
+            left: 10px;
+            display: block;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin: 10px;
+        }
+
+
+        /* #navupperleft {
+            
+            display: ;
+        } */
+        .submit {
+            height: 50px;
+            margin: 20px;
+            align-items: center;
+            width: 100px;
+            background-color: yellowgreen;
+            color: black;
+            font-size: larger;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .submit:hover {
+            background-color: red;
+        }
+
+        .boolean {
+            font-size: large;
+            /* color: white; */
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            margin: 30px;
+            color: black;
+            background-color: red;
+            background-image: url(https://img.freepik.com/free-vector/hand-painted-w…or-pastel-sky-background_23-2148902771.jpg?w=2000)
+;
+
+        }
+        /* #social-media{
+            height: 344px;
+            display: inline;
+        } */
+
+        /* #speciality{
+            /* background-image: url("https://st3.depositphotos.com/1092019/12815/i/600/depositphotos_128158612-stock-photo-features-on-small-chalkboard-3d.jpg"); */
+
+
+            .icons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: red;
+            background-image: url(https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg);
+        }
+        .icon img{
+            height: 100px;
+            width: 100px;
+        }
+        .icon{
+            margin: 20px;
+           
+            opacity: 0.7;
+        }
+        .icon:hover{
+            opacity: 1;
+            background-size: 10px;
+        }
+        .customizable{
+          
+            
+            font-family: 'Bree Serif', serif;
+            font-size: 3rem;
+            padding: 10px;
+            color: yellow;
+            background-color: black;
+            margin: 10px;
+
+        }
+        .h-primar{
+            font-family: 'Bree Serif', serif;
+            font-size: 3rem;
+            padding: 10px;
+            color: yellow;
+            background-color: black;
+            margin: 10px;
+
+        }
+        .calender{
+
+            /* padding: 6px 35px;
+            border: 2px solid white;
+            background-color: black;
+            color: white;
+            margin: 17px;
+            font-size: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            color: white; */
+            
+            width: 400px;
+            height: 100px;
+            font :bolder;
+            font-size: 1.8rem;
+            color: whitesmoke;
+            background-color: black;
+            color: white;
+            margin: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .calender:hover{
+            background-color: red;
+            background-size: 500px 200px;
+        }
+         button{
+            color: red;
+            background-color: black;
+            /* margin: 20px; */
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: white;
+            border-radius: 20px;
+            background-size: 200%;
+
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+<body id="background"
+    background="https://thumbs.dreamstime.com/z/close-up-calendar-blue-table-background-planning-business-meeting-travel-concept-138335111.jpg">
+    <nav id="navbar">
+
+        <div id="navupperleft">
+
+            <div id="logo">
+                <img
+                    src="https://images.tmcnet.com/tmc/misc/articles/image/2018-oct/3671909244-bigstock--animated-schedule-supersize.jpg">
+            </div>
+            <ul>
+                <!-- <li class="item" onclick="features()">Features</li> -->
+                <button type="button" class="item" onclick="features()">features</button>
+                <!-- <li class="item"><a href="features.html">Features</a></li> -->
+                <li class="item"><a href="aboutus.html">about us</a></li>
+                <!-- <li class="item"><a href="#Contact Us">Contact Us</a></li> -->
+                <button type="button" class="item" onclick="contactus()">Contact Us</button>
+            </ul>
+        </div>
+        <div class="navupperright">
+            <button class="login"> <a href="login.html"> JOIN US</a></button>
+            <!-- <button class="submit"><a href="submit.html">SUBMIT</a></button> -->
+            <!-- <button class="signin"><a href="signup.html">
+                SIGN UP</a></button> -->
+
+        </div>
+    </nav>
+    <section id="home">
+
+        <h1 class="customizable"><a> Customizable Meeting Scheduler</a></h1>
+        <p class="h-primar">Free smart scheduling for individuals and teams</p>
+        
+        <button class="calender"><a href="calender.html" > Create your Scheduling Page</a></button>
+    </section>
+    <section id="services container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+
+            <div class="box">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.NKKtPX_z9UDDcXrYJNl82QHaHa&pid=Api&P=0&w=172&h=172" alt="">
+                <h2 class="h-secondary.center">Change in Events</h2>
+                <p class="center">Add or Subtract events in the database </p>
+            </div>
+            <div class="box">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.5UXIh-WwbEQl41MGMqVUwgHaGe&pid=Api&P=0&w=174&h=152" alt="">
+                <h2 class="h-secondary.center">Upcoming Events</h2>
+                <p class="center">See all the upcoming events</p>
+            </div>
+            <div class="box">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.aNV7Rz0mcMb--VkAvNqNNAAAAA&pid=Api&P=0&w=194&h=162" alt="">
+                <h2 class="h-secondary.center">Download</h2>
+                <p class="center">Download a copy of all the Events</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center"
+            background="https://image.shutterstock.com/image-photo/time-running-260nw-271332740.jpg"> OUR CLIENTS!!!
+        </h1>
+        <div class="clients">
+            <div class="client-item"><a href="https://zoom.us">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.7BfVPa66hK0Adr-VViZNqQHaHa&pid=Api&P=0&w=187&h=187">
+                </a>
+            </div>
+            <div class="client-item"><a href="https://meet.google.com">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.mNBCXm_IurjWsfajxYt43wHaGq&pid=Api&P=0&w=185&h=166"
+                        alt="Our Client"></a>>
+            </div>
+            <div class="client-item"><a href="https://www.microsoft.com/en-in/microsoft-teams/log-in">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.sCYV5fSbMRzP2U9BHRhBsQHaHa&pid=Api&P=0&w=165&h=165"
+                        alt="Our Client"></a>
+            </div>
+            <div class="client-item"><a
+                    href="https://www.webex.com/content/webex/c/en_US/index/video-conferencing.html/">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.OVsuXq_xgSii1FylodHppgHaHa&pid=Api&P=0&w=163&h=163"
+                        alt="Our Client"></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="features">
+        <h1 class="h-primary center"> FEATURES OF SCHEDULAN!!!</h1>
+        <div id="speciality">
+            <ol class="boolean">
+                <h1>ABSOLUTELY FREE </h1>
+            </ol>
+            <ol class="boolean">
+                
+                <h1>VERY SIMPLE TO SCHEDULE</h1>
+            </ol>
+            <ol class="boolean">
+                <h1>REMINDERS ABOUT UPCOMING ACTIVITY</h1>
+            </ol>
+           
+            <ol class="boolean">
+                <h1>CAN WATCH MONTHWISE, YEARWISE , DAYWISE!!!</h1>
+            </ol>
+            <ol class="boolean">
+                <h1>Modify events in database.</h1>
+            </ol>
+            <ol class="boolean">
+                <h1> Timeline of complete day.</h1>
+            </ol>
+
+
+        </div>
+    </section>
+   
+    
+    <!-- <div class="client-item"><a href="https://zoom.us">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.7BfVPa66hK0Adr-VViZNqQHaHa&pid=Api&P=0&w=187&h=187">
+    </a>
+</div> -->
+
+
+
+
+    <section id="Contact">
+        <h1 class="h-primary center">Feedback</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <!-- <label for="name">Name:</label> -->
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="email">Email:</label> -->
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="phone number">Name:</label> -->
+                    <input type="phone" name="phone" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="Feedback">Feedback:</label> -->
+                    <textarea name="Feedback" id="Feedback" cols="30" rows="10"
+                        placeholder="Enter your Feedback"></textarea>
+                </div>
+                <button class="submit"><a href="submit.html">SUBMIT</a></button>
+                <!-- <button class="btn btn-dark"><a href="sub.html">submit</a></button> -->
+
+            </form>
+        </div>
+
+    </section>
+
+    
+    <section id="social-media">
+        <h1 class="h-primary center"
+            background="
+            
+            "> FOLLOW US ON SOCIAL MEDIA!!!
+        </h1>
+        <div class="icons">
+            <div class="icon"><a href="https://www.instagram.com">
+                    <img src="https://architectureprize.com/wp-content/uploads/2021/11/Instagram-logo-free-download-PNG.png"
+                    >
+                </a>
+            </div>
+            <div class="icon"><a href="https://www.facebook.com">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
+                        alt="Our Client"></a>
+            </div>
+            <div class="icon"><a href="https://www.linkedin.com">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png"
+                        alt="Our Client"></a>
+            </div>
+            <!-- <div class="icon"><a
+                    href="https://www.webex.com/content/webex/c/en_US/index/video-conferencing.html/">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.OVsuXq_xgSii1FylodHppgHaHa&pid=Api&P=0&w=163&h=163"
+                        alt="Our Client"></a>
+            </div> -->
+        </div>
+    </section>
+  <script>
+    
+
+
+    function features() {
+        window.scrollBy(0,1400);
+    }
+
+   function contactus() {
+    window.scrollBy(0,1900);
+    
+   } 
+    
+    
+    // window.scrollBy(0,1000);
+
+    
+  </script>
+    
+   
+</body>
+
+
+
+</html>
